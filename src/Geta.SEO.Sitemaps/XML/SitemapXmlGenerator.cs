@@ -484,7 +484,7 @@ namespace Geta.SEO.Sitemaps.XML
         {
             return this.SiteDefinitionRepository
                 .List()
-                .FirstOrDefault(siteDef => siteDef.SiteUrl == sitemapSiteUri || siteDef.Hosts.Any(hostDef => hostDef.Name.Equals(sitemapSiteUri.Host, StringComparison.InvariantCultureIgnoreCase)));
+                .FirstOrDefault(siteDef => siteDef.SiteUrl == sitemapSiteUri || siteDef.Hosts.Any(hostDef => hostDef.Name.Equals(sitemapSiteUri.Authority, StringComparison.InvariantCultureIgnoreCase)));
         }
 
         protected string GetHostLanguageBranch()
